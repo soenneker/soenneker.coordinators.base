@@ -38,6 +38,6 @@
         <None Include="..\icon.png" Pack="true" PackagePath="\" />
         <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
-        <PackageReference Include="Soenneker.Utils.Cancellation" Version="2.1.5" />
+        <PackageReference Include="Soenneker.Utils.Cancellation" Version="2.1.7" />
     </ItemGroup>
 </Project>
