@@ -8,5 +8,5 @@
 ## Installation
 
 ```
-Install-Package Soenneker.Coordinators.Base
+dotnet add package Soenneker.Coordinators.Base
 ```
