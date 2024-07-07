@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 using Soenneker.Coordinators.Base.Abstract;
-using Soenneker.Utils.Cancellation.Abstract;
 
 namespace Soenneker.Coordinators.Base;
 
@@ -9,11 +8,8 @@ public abstract class BaseCoordinator : IBaseCoordinator
 {
     protected ILogger<BaseCoordinator> Logger { get; }
 
-    protected ICancellationUtil CancellationUtil { get; }
-
-    protected BaseCoordinator(ILogger<BaseCoordinator> logger, ICancellationUtil cancellationUtil)
+    protected BaseCoordinator(ILogger<BaseCoordinator> logger)
     {
         Logger = logger;
-        CancellationUtil = cancellationUtil;
     }
 }
