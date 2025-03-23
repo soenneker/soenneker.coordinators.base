@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Soenneker.Coordinators.Base.Abstract;
 
 namespace Soenneker.Coordinators.Base;
@@ -8,8 +9,11 @@ public abstract class BaseCoordinator : IBaseCoordinator
 {
     protected ILogger<BaseCoordinator> Logger { get; }
 
-    protected BaseCoordinator(ILogger<BaseCoordinator> logger)
+    protected IConfiguration Config { get; }
+
+    protected BaseCoordinator(IConfiguration config, ILogger<BaseCoordinator> logger)
     {
+        Config = config;
         Logger = logger;
     }
 }
