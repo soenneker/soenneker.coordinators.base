@@ -1,16 +1,15 @@
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Coordinators.Base.Tests;
 
-[Collection("Collection")]
-public class BaseCoordinatorTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public class BaseCoordinatorTests : HostedUnitTest
 {
-    public BaseCoordinatorTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public BaseCoordinatorTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
