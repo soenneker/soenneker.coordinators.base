@@ -40,6 +40,6 @@
         <None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
         <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
         <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.7" />
-        <PackageReference Include="Soenneker.Extensions.Configuration" Version="4.0.819" />
+        <PackageReference Include="Soenneker.Extensions.Configuration" Version="4.0.820" />
     </ItemGroup>
 </Project>
