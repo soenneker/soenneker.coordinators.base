@@ -1,7 +1,7 @@
 ﻿namespace Soenneker.Coordinators.Base.Abstract;
 
 /// <summary>
-/// A base class that sits between a controller and manager (responsibility-driven-design) providing logging and cancellation
+/// Marks a service as an application coordinator between transport and lower-level application services.
 /// </summary>
 public interface IBaseCoordinator
 {

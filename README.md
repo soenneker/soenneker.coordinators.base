@@ -5,7 +5,7 @@
 
 # Soenneker.Coordinators.Base
 
-A base class that sits between a controller and manager (responsibility-driven-design) providing logging and cancellation.
+Provides a small base class for application coordinators, with protected access to `IConfiguration` and `ILogger`.
 
 ## Install
 
@@ -13,6 +13,31 @@ A base class that sits between a controller and manager (responsibility-driven-d
 dotnet add package Soenneker.Coordinators.Base
 ```
 
-## What you get
+## Usage
 
-- `IBaseCoordinator` — A base class that sits between a controller and manager (responsibility-driven-design) providing logging and cancellation.
+```csharp
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using Soenneker.Coordinators.Base;
+
+public sealed class OrdersCoordinator : BaseCoordinator
+{
+    public OrdersCoordinator(
+        IConfiguration configuration,
+        ILogger<OrdersCoordinator> logger)
+        : base(configuration, logger)
+    {
+    }
+
+    public void Coordinate()
+    {
+        Logger.LogInformation("Coordinating orders for {Environment}", Config["Environment"]);
+    }
+}
+```
+
+`IBaseCoordinator` is an empty marker interface. `BaseCoordinator` stores the configuration and logger references; it does not implement orchestration, cancellation, retries, validation, or dependency-injection registration.
+
+The logger property is typed as `ILogger<BaseCoordinator>`, but `ILogger<T>` is covariant, so a derived coordinator's `ILogger<DerivedCoordinator>` can be passed to the base constructor while retaining the derived logging category.
+
+Configuration is the application's composed `IConfiguration`. Derived coordinators should avoid logging secrets or returning raw configuration values to callers.
