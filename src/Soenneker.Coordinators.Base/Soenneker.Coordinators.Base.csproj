@@ -40,6 +40,6 @@
         <None Include="..\..\README.md" Pack="true" PackagePath="\" />
         <None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
         <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
-<PackageReference Include="Soenneker.Extensions.Configuration" Version="4.0.895" />
+<PackageReference Include="Soenneker.Extensions.Configuration" Version="4.0.896" />
     </ItemGroup>
 </Project>
